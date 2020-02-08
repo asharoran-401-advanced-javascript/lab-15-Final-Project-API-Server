@@ -1,0 +1,19 @@
+{
+  "name": "lab-15-final-project-api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asharoran-401-advanced-javascript/lab-15-Final-Project-API-Server.git"
+  },
+  "author": "ASHAR ORAN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asharoran-401-advanced-javascript/lab-15-Final-Project-API-Server/issues"
+  },
+  "homepage": "https://github.com/asharoran-401-advanced-javascript/lab-15-Final-Project-API-Server#readme"
+}
