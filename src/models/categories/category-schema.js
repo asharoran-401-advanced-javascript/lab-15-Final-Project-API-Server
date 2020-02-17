@@ -5,7 +5,7 @@
 const mongoose = require('mongoose');
 
 //// require Parent Schema
-require('../models/product-schema.js');
+require('../products/product-schema.js');
 
 const categorySchema = mongoose.Schema({
   name : { type : String , require : true},

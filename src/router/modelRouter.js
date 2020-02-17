@@ -7,8 +7,11 @@
 const express = require('express');
 const router = express.Router();
 
-const category = require('../models/category-model.js');
-const product = require('../models/product-model.js');
+const category = require('../models/categories/category-model.js');
+const product = require('../models/products/product-model.js');
+
+const bearerAuth = require('../all-authFolders/bearer/bearer-middleware.js');
+const acl = require('../all-authFolders/acl/acl-middleware.js');
 
 /**
  * create finction to modularize the routes
@@ -39,11 +42,11 @@ router.param('model' , getModel);
 
 // ======================== USE Our Route =================== //
 
-router.get('/api/v1/:model' , handleGetAll);
-router.get('/api/v1/:model/:id' , handleGetOneById);
-router.post('/api/v1/:model' , handlePost);
-router.put('/api/v1/:model/:id' , handleUpdate);
-router.delete('/api/v1/:model/:id' , handleDelete);
+router.get('/api/v1/:model' ,bearerAuth, handleGetAll);
+router.get('/api/v1/:model/:id', bearerAuth , handleGetOneById);
+router.post('/api/v1/:model', bearerAuth ,acl('create'), handlePost);
+router.put('/api/v1/:model/:id', bearerAuth, acl('update') , handleUpdate);
+router.delete('/api/v1/:model/:id',bearerAuth, acl('delete') , handleDelete);
 
 // ======================= CRUD function ===================== //
 
@@ -122,9 +125,3 @@ function handleDelete(req , res , next) {
 }
 
 module.exports = router;
-
-
-
-
-
-

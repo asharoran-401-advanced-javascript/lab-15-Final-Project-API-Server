@@ -1,8 +1,8 @@
 // eslint-disable-next-line strict
 'use strict';
 
-const Model = require('../models/model.js');
-const schema = require('../models/category-schema.js');
+const Model = require('../model.js');
+const schema = require('./category-schema.js');
 
 class Category extends Model {}
 
