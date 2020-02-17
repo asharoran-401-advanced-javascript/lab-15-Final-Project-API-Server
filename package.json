@@ -1,0 +1,33 @@
+{
+  "name": "lab-15-final-project-api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asharoran-401-advanced-javascript/lab-15-Final-Project-API-Server.git"
+  },
+  "author": "ASHAR ORAN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asharoran-401-advanced-javascript/lab-15-Final-Project-API-Server/issues"
+  },
+  "homepage": "https://github.com/asharoran-401-advanced-javascript/lab-15-Final-Project-API-Server#readme",
+  "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
+    "base-64": "^0.1.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.11",
+    "morgan": "^1.9.1",
+    "superagent": "^5.2.1"
+  }
+}

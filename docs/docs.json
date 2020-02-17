@@ -1,0 +1,182 @@
+{
+    "swagger" : "2.0",
+    "info" : {
+      "description" : "Api server",
+      "version" : "0.1",
+      "title" : "my first application"
+    },
+    "paths" : {
+      "/api/v1/category" : {
+        "post" : {
+          "consumes" : [ "application/json" ],
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "body",
+            "required" : false,
+            "schema" : {
+              "$ref" : "#/definitions/Model1"
+            },
+            "x-examples" : {
+              "application/json" : "{ \"name\" : \"bag\"}"
+            }
+          } ],
+          "responses" : {
+            "201" : {
+              "description" : "to Create a new category and add it to DB",
+              "schema" : {
+                "$ref" : "#/definitions/Model3"
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/product/5e340bcafd7e2757dfda3119" : {
+        "put" : {
+          "consumes" : [ "application/json" ],
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "body",
+            "required" : false,
+            "schema" : {
+              "$ref" : "#/definitions/Model2"
+            },
+            "x-examples" : {
+              "application/json" : "  {\n            \"_id\": \"5e340bcafd7e2757dfda3119\",\n            \"__v\": 0,\n            \"category\": \"hate\",\n            \"description\": \"nikke\",\n            \"display_name\": \"modren hate\"\n        }"
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "to update product by it's ID",
+              "schema" : {
+                "$ref" : "#/definitions/Model4"
+              }
+            }
+          }
+        }
+      },
+      "/api/v1/category/5e342988e0cabc5ab302acad" : {
+        "delete" : {
+          "consumes" : [ "application/json" ],
+          "produces" : [ "application/json" ],
+          "parameters" : [ {
+            "in" : "body",
+            "name" : "body",
+            "required" : false,
+            "schema" : {
+              "$ref" : "#/definitions/Model0"
+            },
+            "x-examples" : {
+              "application/json" : "  {\n            \"_id\": \"5e340bcafd7e2757dfda3119\",\n            \"__v\": 0,\n            \"category\": \"hate\",\n            \"description\": \"nikke\",\n            \"display_name\": \"modren hate\"\n        }"
+            }
+          } ],
+          "responses" : {
+            "200" : {
+              "description" : "to delete category from DB by it id",
+              "schema" : {
+                "$ref" : "#/definitions/Model5"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions" : {
+      "Model0" : {
+        "properties" : {
+          "_id" : {
+            "type" : "string"
+          },
+          "__v" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model1" : {
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model2" : {
+        "properties" : {
+          "_id" : {
+            "type" : "string"
+          },
+          "__v" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model3" : {
+        "properties" : {
+          "_id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "__v" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "Model4" : {
+        "properties" : {
+          "_id" : {
+            "type" : "string"
+          },
+          "__v" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "display_name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Model5" : {
+        "properties" : {
+          "_id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "__v" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      }
+    }
+  }

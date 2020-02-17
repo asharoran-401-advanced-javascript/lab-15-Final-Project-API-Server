@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my application</title>
+</head>
+<body>
+    <header>Hello , this is Signin/signup page</header>
+    <a href="#" id="oauth">logIn</a>
+</body>
+<script>
+    let GitHUBURl = 'https://github.com/login/oauth/authorize';
+    let clientOptions = {
+        client_id : '7ebc59bd640a5bd648bc', 
+        redirect_uri: 'http://localhost:3000/oauth', //where should i go hen I'm done 
+        scop:'read:user', // what information I try to get (a way to limit the response)
+        state: 'myfirstApplication' //state managment
+    }
+
+    let queryString = Object.keys(clientOptions).map((keys) =>{
+        return `${keys}=` + encodeURIComponent(clientOptions[keys]);
+    }).join('&');
+    console.log('myyyy Query string' , queryString);
+
+    // client_id=&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth&scop=read%3Auser&state=myfirstApplication
+
+    let auth = `${GitHUBURl}?${queryString}`;
+
+    // auth URL https://github.com/login/oauth/authorize?client_id=&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Foauth&scop=read%3Auser&state=myfirstApplication
+
+    console.log('auth URL' , auth)
+
+    let link = document.getElementById('oauth');
+    link.setAttribute('href' , auth);
+</script>
+
+</html>
